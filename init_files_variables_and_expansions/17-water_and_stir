@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "$(( $(for ((i=0;i<${#WATER};i++)); do printf "%d " $(( $(expr index "water" "${WATER:$i:1}") -1 )); done) + $(for ((i=0;i<${#STIR};i++)); do printf "%d " $(( $(expr index "stir" "${STIR:$i:1}") -1 )); done) ))" | while read n; do ... ; done
+
