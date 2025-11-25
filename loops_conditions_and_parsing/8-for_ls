@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # ls shit
-ls -1 > good_shi
-for good_shi in *; do
-	echo "$good_shi" | cut -d'-' -f2-
+for filename in *; do
+    echo "$filename" | cut -d'-' -f2-
 done
