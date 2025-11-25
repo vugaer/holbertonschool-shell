@@ -3,8 +3,9 @@
 h=0
 while (( h <= 12 )); do
 	m=0
+	echo "Hour: $h"
 	while (( m <= 60 )); do
-		echo "$h $m"
+		echo "$m"
 		((m++))
 	done
 	((h++))
