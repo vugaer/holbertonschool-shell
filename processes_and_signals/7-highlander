@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # highlander
 
-trap 'echo  am invincible' TERM
+trap 'echo I am invincible!!!' TERM
 
 while true; do
 	echo "To infinity and beyond"
