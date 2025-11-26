@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-# I hate bugs
-DAEMON="./manage_my_process"
+# I HATE FYN!
+DAEMON="/usr/bin/env bash /path/to/manage_my_process"
 PIDFILE="/var/run/my_process.pid"
 
 case "$1" in
     start)
-        # start the daemon in background
         $DAEMON &
         echo $! > "$PIDFILE"
         echo "manage_my_process started"
@@ -21,7 +20,6 @@ case "$1" in
         echo "manage_my_process stopped"
         ;;
     restart)
-        # stop
         if [ -f "$PIDFILE" ]; then
             pid="$(cat "$PIDFILE")"
             if [ -n "$pid" ]; then
@@ -29,7 +27,6 @@ case "$1" in
             fi
             rm -f "$PIDFILE"
         fi
-        # start
         $DAEMON &
         echo $! > "$PIDFILE"
         echo "manage_my_process restarted"

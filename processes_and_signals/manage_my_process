@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#asdads
+# FYN!
 while true
 do
     echo "I am alive!" >> /tmp/my_process
