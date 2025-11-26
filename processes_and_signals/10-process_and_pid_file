@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # asdadasd
 
+chmod 777 /var/run
+
 PIDFILE="/var/run/myscript.pid"
 
 echo "$$" > /var/run/myscript.pid
