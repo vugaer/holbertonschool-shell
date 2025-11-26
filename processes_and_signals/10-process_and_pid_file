@@ -3,9 +3,9 @@
 # shellcheck disable=SC2024
 PIDFILE="./var/run/myscript.pid"
 
-trap 'echo I hate the kill command; rm -rf "$PIDFILE"' TERM
+trap 'echo I hate the kill command; rm -f "$PIDFILE"' TERM
 trap 'echo Y U no love me?!' INT
-trap 'rm -rf "$PIDFILE"' QUIT
+trap 'rm -f "$PIDFILE"' QUIT
 
 echo "$$" > "$PIDFILE"
 
