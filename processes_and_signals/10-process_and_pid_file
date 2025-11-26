@@ -3,13 +3,11 @@
 
 PIDFILE="/var/run/myscript.pid"
 
-# Create PID file with this script's PID
 echo "$$" > "$PIDFILE"
 
-# Handlers
 on_term() {
     echo "I hate the kill command"
-    rm -f "$PIDFILE"
+#   rm -f "$PIDFILE"
     exit 0
 }
 
@@ -18,16 +16,14 @@ on_int() {
 }
 
 on_quit() {
-    rm -f "$PIDFILE"
+#    rm -f "$PIDFILE"
     exit 0
 }
 
-# Set traps
 trap 'on_term' TERM
 trap 'on_int' INT
 trap 'on_quit' QUIT
 
-# Main loop
 while true; do
     echo "To infinity and beyond"
     sleep 2
