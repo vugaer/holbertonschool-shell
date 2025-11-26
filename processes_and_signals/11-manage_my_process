@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
-# I HATE FYN!
-DAEMON="/usr/bin/env bash /path/to/manage_my_process"
+# fyn!
+DAEMON="./manage_my_process"
 PIDFILE="/var/run/my_process.pid"
 
 case "$1" in
     start)
-        $DAEMON &
+        "$DAEMON" &
         echo $! > "$PIDFILE"
         echo "manage_my_process started"
         ;;
     stop)
         if [ -f "$PIDFILE" ]; then
             pid="$(cat "$PIDFILE")"
-            if [ -n "$pid" ]; then
-                kill "$pid" 2>/dev/null
-            fi
+            [ -n "$pid" ] && kill "$pid" 2>/dev/null
             rm -f "$PIDFILE"
         fi
         echo "manage_my_process stopped"
@@ -22,12 +20,10 @@ case "$1" in
     restart)
         if [ -f "$PIDFILE" ]; then
             pid="$(cat "$PIDFILE")"
-            if [ -n "$pid" ]; then
-                kill "$pid" 2>/dev/null
-            fi
+            [ -n "$pid" ] && kill "$pid" 2>/dev/null
             rm -f "$PIDFILE"
         fi
-        $DAEMON &
+        "$DAEMON" &
         echo $! > "$PIDFILE"
         echo "manage_my_process restarted"
         ;;
