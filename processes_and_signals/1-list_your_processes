@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ps -e -o user,pid,%cpu,%mem,vsz,tty,stat,start,start_time,command
