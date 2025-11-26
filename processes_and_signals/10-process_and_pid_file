@@ -3,21 +3,21 @@
 
 PIDFILE="/var/run/myscript.pid"
 
-# Create the PID file with root permissions
 printf '%s\n' "$$" | sudo tee "$PIDFILE" > /dev/null
 
 on_term() {
     echo "I hate the kill command"
-    sudo rm -f "$PIDFILE"
+    # sudo rm -f "$PIDFILE"
     exit 0
 }
 
 on_int() {
     echo "Y U no love me?!"
+    exit 130
 }
 
 on_quit() {
-    sudo rm -f "$PIDFILE"
+    # sudo rm -f "$PIDFILE"
     exit 0
 }
 
