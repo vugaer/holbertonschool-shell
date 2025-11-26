@@ -3,7 +3,7 @@
 
 PIDFILE="/var/run/myscript.pid"
 
-echo "$!" > "$PIDFILE"
+echo "$$" > /var/run/myscript.pid
 
 trap 'echo I hate the kill command; rm -rf "$PIDFILE"' TERM
 trap 'echo Y U no love me?!' INT
