@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # asdadasd
-
+# shellcheck disable=SC2024
 PIDFILE="/var/run/myscript.pid"
 
 sudo echo "$$" > "$PIDFILE"
