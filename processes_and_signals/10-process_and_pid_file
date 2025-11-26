@@ -2,8 +2,8 @@
 # asdadasd
 
 PIDFILE="/var/run/myscript.pid"
-
-touch /var/run/myscript.pid
+sudo su
+echo "$$" > "$PIDFILE"
 
 trap 'echo I hate the kill command; rm -rf "$PIDFILE"' TERM
 trap 'echo Y U no love me?!' INT
