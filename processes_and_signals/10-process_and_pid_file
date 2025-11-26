@@ -1,14 +1,34 @@
 #!/usr/bin/env bash
-# asdadasd
-# shellcheck disable=SC2024
-PIDFILE="./var/run/myscript.pid"
+# 101-manage_my_process
 
-trap 'echo I hate the kill command; rm -f "$PIDFILE"; exit 0' TERM
-trap 'echo Y U no love me?!' INT
-trap 'rm -f "$PIDFILE"; exit 0' QUIT
+PIDFILE="/var/run/myscript.pid"
 
+# Create PID file with this script's PID
 echo "$$" > "$PIDFILE"
 
+# Handlers
+on_term() {
+    echo "I hate the kill command"
+    rm -f "$PIDFILE"
+    exit 0
+}
+
+on_int() {
+    echo "Y U no love me?!"
+}
+
+on_quit() {
+    rm -f "$PIDFILE"
+    exit 0
+}
+
+# Set traps
+trap 'on_term' TERM
+trap 'on_int' INT
+trap 'on_quit' QUIT
+
+# Main loop
 while true; do
-	echo "To infinity and beyond"
+    echo "To infinity and beyond"
+    sleep 2
 done
