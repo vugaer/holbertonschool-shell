@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# please do not require comments
+
+trap 'echo "RN's do not exit by Ctrl+C"; exit 130' INT
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
