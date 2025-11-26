@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# idk what is it?
+i=1
+while (( i < 101 )); do
+	if (( i % 3 == 0 && i % 5 == 0 )); then
+		echo "FizzBuzz";fi
+	elif (( i % 3 == 0); then
+		echo "Fizz";fi
+	elif (( i % 5 == 0); then
+		echo "Buzz";fi
+	else
+		echo "$i";fi
