@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# fyn!
+# fadasdasd
 DAEMON="./manage_my_process"
 PIDFILE="/var/run/my_process.pid"
 
