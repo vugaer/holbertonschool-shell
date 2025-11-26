@@ -3,7 +3,7 @@
 # shellcheck disable=SC2024
 PIDFILE="./var/run/myscript.pid"
 
-sudo echo "$$" > "$PIDFILE"
+echo "$$" | sudo tee /var/run/myscript.pid > /dev/null
 
 trap 'echo I hate the kill command; rm -rf "$PIDFILE"' TERM
 trap 'echo Y U no love me?!' INT
