@@ -11,5 +11,5 @@ trap 'rm -rf "$PIDFILE"' QUIT
 
 while true; do
 	echo "To infinity and beyond"
-	sleep 3
+	sleep 2
 done
