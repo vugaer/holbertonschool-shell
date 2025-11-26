@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# asdasd
+
+pkill -f 7-highlander
