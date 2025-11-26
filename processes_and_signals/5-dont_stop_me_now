@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# real nurses do not do that
+
+pid_infinity="$(pgrep -f ./4-to-infinity_and_beyond)"
+kill "$pid_infinity"
