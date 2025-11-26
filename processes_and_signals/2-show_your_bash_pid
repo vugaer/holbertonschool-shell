@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# nero
+# shellcheck disable=SC2009
+ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start_time,time,command | grep -i bash
