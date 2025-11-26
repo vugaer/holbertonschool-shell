@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# I hate bugs
 DAEMON="./manage_my_process"
 PIDFILE="/var/run/my_process.pid"
 
