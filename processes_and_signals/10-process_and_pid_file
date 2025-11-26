@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-# 101-manage_my_process
+# 10-process_and_pid_file
 
 PIDFILE="/var/run/myscript.pid"
 
-echo "$$" > "$PIDFILE"
+# Create the PID file with root permissions
+printf '%s\n' "$$" | sudo tee "$PIDFILE" > /dev/null
 
 on_term() {
     echo "I hate the kill command"
-#   rm -f "$PIDFILE"
+    sudo rm -f "$PIDFILE"
     exit 0
 }
 
@@ -16,7 +17,7 @@ on_int() {
 }
 
 on_quit() {
-#    rm -f "$PIDFILE"
+    sudo rm -f "$PIDFILE"
     exit 0
 }
 
